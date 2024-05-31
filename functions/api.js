@@ -47,7 +47,8 @@ router.get('/:id', async (req, res) => {
 //     console.log(`Example app listening on port ${port}`);
 // });
 
-app.use(`/.netlify/functions/index`, router);
+app.use(`/.netlify/functions/api`, router);
+app.use(`/`, router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
